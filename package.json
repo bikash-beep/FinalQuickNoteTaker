@@ -1,0 +1,47 @@
+{
+  "name": "quick-note-taker",
+  "version": "1.0.0",
+  "description": "Quick Note Taker Electron App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac"
+  },
+  "author": "Team no.1",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^41.7.2",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.quicknotetaker.app",
+    "productName": "Quick Note Taker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "package.json",
+      "LICENSE",
+      "readme.md"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
